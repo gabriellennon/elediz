@@ -5,7 +5,9 @@ import JesusQuadriculadoImg from '../assets/img/estudos/jesus.jpeg'
 
 export const StudyCard = () => {
   return (
-    <Card>
+    <Card
+      className="max-w-md"
+    >
       <CardContent 
         className="p-0"
       >
@@ -17,7 +19,7 @@ export const StudyCard = () => {
       </CardContent>
       <CardFooter className="p-[8px]">
         <div className="flex flex-col gap-2">
-          <p>
+          <p className="font-medium text-[#50555A]">
             Como ser perdoado?
           </p>
           <div className="flex flex-row gap-[4px]">
