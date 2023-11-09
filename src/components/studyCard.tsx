@@ -14,7 +14,7 @@ export const StudyCard = () => {
 
   return (
     <Card
-      className="max-w-md"
+      className="max-w-[280px] md:w-[280px] hover:cursor-pointer transition duration-0 ease-in-out hover:duration-700 hover:shadow-lg hover:shadow-gray-200"
       onClick={handleGoToStudy}
     >
       <CardContent 

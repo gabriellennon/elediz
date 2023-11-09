@@ -11,8 +11,8 @@ export default function Home() {
   const [studies, setStudies] = useState([0,1])
 
   return (
-    <main className="min-h-screen bg-[#F5F8FA] pb-5">
-      <div className="mt-12 bg-[#9CD9F8]/[0.4] rounded-s-[65px] max-w-[95%] md:max-w-[70%]" dir="rtl">
+    <main className="min-h-screen bg-[#F5F8FA] pb-5 pt-12">
+      <div className="bg-[#9CD9F8]/[0.4] rounded-s-[65px] max-w-[95%] md:max-w-[70%]" dir="rtl">
         <div className="flex items-center flex-row-reverse justify-between p-2">
           <h1 className="text-left text-[#3D3D45] font-medium text-lg">
             Descubra o que Deus quer te dizer sobre diversos temas através da bíblia
@@ -36,11 +36,11 @@ export default function Home() {
         />
 
         <div className="mt-6">
-          <h2 className="text-[#3D3D45] text-xl font-bold">
+          <h2 className="text-[#3D3D45] text-xl md:text-2xl font-bold">
             Categorias
           </h2>
           <div className="mt-2">
-            <Tabs defaultValue="account" className="w-[400px]">
+            <Tabs defaultValue="all" className="w-[400px]">
               <TabsList>
                 <TabsTrigger value="all">Todos</TabsTrigger>
                 <TabsTrigger value="moreViews">Mais acessados</TabsTrigger>
@@ -51,7 +51,7 @@ export default function Home() {
               <TabsContent value="moreViews">Change your password here.</TabsContent>
             </Tabs>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-2 mt-2">
+          <div className="grid grid-cols-2 gap-3 md:flex md:flex-row md:flex-wrap md:w-full mt-2">
             {studies.map(study => (
               <StudyCard key={study} />
             ))}
@@ -59,11 +59,11 @@ export default function Home() {
         </div>
 
         <div className="mt-6">
-          <h2 className="text-[#3D3D45] text-xl font-bold">
+          <h2 className="text-[#3D3D45] text-xl md:text-2xl font-bold">
             Séries de estudos
           </h2>
           <div className="mt-2">
-            <Tabs defaultValue="account" className="w-[400px]">
+            <Tabs defaultValue="all" className="w-[400px]">
               <TabsList>
                 <TabsTrigger value="all">Todos</TabsTrigger>
                 <TabsTrigger value="moreViews">Mais acessados</TabsTrigger>

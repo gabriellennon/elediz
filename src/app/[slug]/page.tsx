@@ -1,6 +1,6 @@
 "use client"
 import { useEffect } from "react";
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { Button } from "@/components/ui/button";
 import { ChevronLeftIcon } from "@radix-ui/react-icons";
 import { Toggle } from "@/components/ui/toggle";
@@ -10,6 +10,12 @@ import { QuestionAccordion } from "@/components/QuestionAccordion";
 
 export default function RedirectLink() {
   const pathname = usePathname()
+  const router = useRouter()
+  
+  function handleGoBack(){
+    router.back()
+  }
+
 
   useEffect(() => {
     console.log(pathname)
@@ -24,6 +30,7 @@ export default function RedirectLink() {
                 variant="outline" 
                 size="icon"
                 className="bg-white rounded-[14px] shadow-indigo-[#B6D9EB]/40"
+                onClick={handleGoBack}
             >
                 <ChevronLeftIcon className="h-4 w-4" />
             </Button>
