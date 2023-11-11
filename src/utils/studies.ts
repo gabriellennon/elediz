@@ -3,6 +3,7 @@ import BiblePng from '../assets/img/estudos/bible.png'
 import HugJesusPng from '../assets/img/estudos/hugJesus.png'
 import JesusHeartPng from '../assets/img/estudos/jesusHeart.png'
 import PrayerPng from '../assets/img/estudos/prayer.png'
+import CruzJesusPng from '../assets/img/estudos/cruzjesus.png'
 import { TStudy } from './types'
 
 export const studies: TStudy[] = [
@@ -326,5 +327,115 @@ export const studies: TStudy[] = [
             },
         ],
         writer: 'Divisão Sul americana IASD'
+    },
+    {
+        id: 4,
+        slug: 'salvacao',
+        image: CruzJesusPng,
+        title: 'Jesus e a salvação',
+        tags: ['salvação', 'jesus', 'pecado', 'perdão', 'salvacao', 'entrega'],
+        content: [
+            {
+                id: crypto.randomUUID(),
+                isQuestion: false,
+                text: 'Qual foi a última vez em que você sentiu paz? Vivemos tempos de intranquilidade. Todos queremos ter paz, mas poucos realmente conseguem alcançá-la. A angústia está por toda a parte. Como resultado, nunca a sociedade foi tão dependente de medicamentos para manter a calma. Nunca tantas pessoas atentaram contra a própria vida. É impossível tornar o mundo um lugar perfeito agora, mas é possível alcançar a paz em Jesus. Ele viveu, sofreu e morreu para garanti-la a nós. A paz não é a ausência de conflito nem uma doce ilusão. Cristo disse: “Deixo com vocês a paz, a Minha paz lhes dou. Não a dou como o mundo a dá. Que o coração de vocês não fique angustiado nem com medo” (João 14:27). Neste estudo, vamos aprender mais sobre a salvação que Cristo oferece e nos concede a paz.'
+            },
+            {
+                id: crypto.randomUUID(),
+                isQuestion: true,
+                question: ' Leia a parábola “A ovelha perdida”.',
+                citation: 'Lucas 15:3 a 7',
+                explanation:'A paz de uma ovelha está no cuidado de seu pastor. Jesus contou a história de um pastor de ovelhas que amava seu rebanho. Ele sentiu falta de uma de suas cem ovelhas, que conhecia individualmente. Uma delas estava faltando e corria perigo. Então ele prontamente deixou as 99 ovelhas a salvo e partiu em busca da que estava perdida. Não estava em busca de um número, mas de um animalzinho frágil que dependia dele completamente. O pastor caminhou muito até que ouviu balidos ao longe. Finalmente achou sua ovelha ferida, mas ainda com vida. Ele se alegrou muito. Da mesma forma, o divino Pastor está em busca de cada filho e filha perdidos. Um pedido de socorro sempre chega aos ouvidos do Pai. Confie nisso! Sozinhos, sem Ele, estamos perdidos, mas com Ele estamos seguros. Tem você andado longe dos caminhos de Deus e está ferido pelos espinhos do mundo? O Bom Pastor Jesus deixou o Céu para salvar você.'
+            },
+            {
+                id: crypto.randomUUID(),
+                isQuestion: true,
+                question: 'Qual é a consequência final do pecado?',
+                citation: 'Romanos 5:12',
+                explanation:'A morte. Mas há algo que Jesus fez por nós que nos dá uma oportunidade de não termos essa consequência, pois ele já pagou.'
+            },
+            {
+                id: crypto.randomUUID(),
+                isQuestion: true,
+                question: 'O ser humano é capaz de resolver sozinho o problema do pecado?',
+                citation: 'Jeremias 2:22',
+                explanation:'Não. Não podemos fazer nada para resolver o problema do pecado. Nem tendo bom comportamento ou fazendo/pagando promessas. '
+            },
+            {
+                id: crypto.randomUUID(),
+                isQuestion: true,
+                question: 'Como Deus resolveu o problema do pecado?',
+                citation: 'Romanos 5:17 a 19',
+                explanation:'Deus resolveu esse problema por nós enviando Seu Filho.'
+            },
+            {
+                id: crypto.randomUUID(),
+                isQuestion: true,
+                question: 'Como somos justificados e salvos?',
+                citation: 'Efésios 2:8',
+                explanation:'Pela graça, mediante a fé. Ou seja, nossa fé em Jesus e em seu sacrifício obtemos o presente dele para nós que é a graça, onde não precisamos mais morrer pelos nossos pecados, pois Ele morreu por nós e nos aceita de braços abertos.'
+            },
+            {
+                id: crypto.randomUUID(),
+                isQuestion: true,
+                question: 'Qual é a condição para que nossos pecados sejam perdoados?',
+                citation: 'Atos 3:19',
+                explanation:'A única condição para que nossos pecados sejam perdoados é constuído apenas por 2 passos simples: Arrependimento (reconhecimento do erro) e conversão (ir ao caminho contrário do pecado que cometeu). Apenas Cristo pode nos perdoar, e temos acesso a Ele através da oração, então nosso perdão está a 1 oração de distância!'
+            },
+            {
+                id: crypto.randomUUID(),
+                isQuestion: true,
+                question: 'Como obter a liberdade da morte e da escravidão do pecado?',
+                citation: 'João 8:32 a 34 e 51',
+                explanation:'A verdade e fé em Jesus devolve ao ser humano a liverdade perdida.'
+            },
+            {
+                id: crypto.randomUUID(),
+                isQuestion: true,
+                question: 'O que assegurou nossa salvação?',
+                citation: '1 Coríntios 15:20 a 22',
+                explanation:'A ressurreição de Cristo assegurou vida eterna aos que Nele creem.'
+            },
+            {
+                id: crypto.randomUUID(),
+                isQuestion: true,
+                question: 'Qual é o resultado de nos entregarmos a Cristo?',
+                citation: '2 Coríntios 5:17',
+                explanation:'Reconciliado com Deus, o ser humano se torna uma nova criatura. O Espírito Santo nos transforma e nos ajuda a estar 1 com o Pai em comunhão com Jesus para alcançarmos unidade em Seu caráter e imagem.'
+            },
+            {
+                id: crypto.randomUUID(),
+                isQuestion: true,
+                question: 'Qual é o resultado do perdão divino?',
+                citation: 'Romanos 5:1',
+                explanation:'A paz oferecida por Deus.'
+            },
+            {
+                id: crypto.randomUUID(),
+                isQuestion: false,
+                text: '“Todos pecaram e carecem da glória de Deus” (Romanos 3:23). | “Quanto a mim, confio na Tua graça; que o meu coração se alegre na Tua salvação” (Salmo 13:5). '
+            },
+            {
+                id: crypto.randomUUID(),
+                isQuestion: false,
+                text: 'Textos adicionais: Romanos 5:1 a 11 | Efésios 2:1 a 10 | Gálatas 4:1 a 7 | Romanos 3:21 a 26 | 1 Coríntios 15:1 a 8 | Colossenses 3:1 a 11 | 1 João 5:1 a 12.'
+            },
+        ],
+        writer: 'Divisão Sul americana IASD'
     }
 ]
+
+
+// Exemplo
+// {
+//     id: crypto.randomUUID(),
+//     isQuestion: false,
+//     text: ''
+// },
+// {
+//     id: crypto.randomUUID(),
+//     isQuestion: true,
+//     question: 'Qual era a fonte de inspiração dos profetas bíblicos?',
+//     citation: '2 Pedro 1:21',
+//     explanation:'O Espírito Santo'
+// },
