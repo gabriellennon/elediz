@@ -1,8 +1,9 @@
 import Image from "next/image"
 import { Card, CardContent, CardFooter } from "./ui/card"
 import { Toggle } from "./ui/toggle"
-import JesusQuadriculadoImg from '../assets/img/estudos/jesus.jpeg'
 import { useRouter } from 'next/navigation'
+
+import JesusQuadriculadoImg from '../assets/img/estudos/jesus.jpeg'
  
 
 export const StudyCard = () => {
