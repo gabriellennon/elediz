@@ -2,11 +2,21 @@ import Image from "next/image"
 import { Card, CardContent, CardFooter } from "./ui/card"
 import JesusQuadriculadoImg from '../assets/img/estudos/jesus.jpeg'
 import { ChevronRightIcon } from "@radix-ui/react-icons"
+import { useRouter } from 'next/navigation'
 
 
 export const StudyCardSecondary = () => {
+  const router = useRouter()
+  
+  function handleGoToGuideStudy(){
+    router.push('/guias/asda')
+  }
+
   return (
-    <Card className="p-3 flex flex-row justify-between items-center">
+    <Card 
+      className="p-3 flex flex-row justify-between items-center hover:cursor-pointer"
+      onClick={handleGoToGuideStudy}
+    >
       <CardContent 
         className="flex flex-row gap-2 items-center p-0"
       >
