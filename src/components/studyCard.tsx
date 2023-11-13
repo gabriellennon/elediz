@@ -14,7 +14,7 @@ export const StudyCard = ({ imageStudy, slugStudy, tagsStudy, titleStudy }: TPro
   const router = useRouter()
   
   function handleGoToStudy(slug: string){
-    router.push('/slug')
+    router.push(`/${slug}`)
   }
 
   return (

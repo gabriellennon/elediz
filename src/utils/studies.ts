@@ -12,7 +12,7 @@ export const studies: TStudy[] = [
         slug: 'as-escrituras',
         image: BiblePng,
         title: 'Jesus e as escrituras Sagradas',
-        tags: ['bíblia','verdade', 'profetas', 'interpretação'],
+        tags: ['biblia','verdade', 'profetas', 'interpretacao'],
         content: [
             {
                 id: crypto.randomUUID(),
@@ -103,7 +103,7 @@ export const studies: TStudy[] = [
         slug: 'amor-divino',
         image: HugJesusPng,
         title: 'Amor divino',
-        tags: ['amor', 'compaixão', 'divindade'],
+        tags: ['amor', 'compaixao', 'divindade'],
         content: [
             {
                 id: crypto.randomUUID(),
@@ -189,7 +189,7 @@ export const studies: TStudy[] = [
         slug: 'restauracao-do-bem',
         image: JesusHeartPng,
         title: 'Jesus e a restauração do bem',
-        tags: ['origem', 'pecado', 'livre-arbítrio', 'como vencer o pecado'],
+        tags: ['origem', 'pecado', 'livre-arbitrio', 'como-vencer-o-pecado', 'oracao'],
         content: [
             {
                 id: crypto.randomUUID(),
@@ -263,7 +263,7 @@ export const studies: TStudy[] = [
         slug: 'oracao',
         image: PrayerPng,
         title: 'Oração',
-        tags: ['oração', 'como orar', 'jesus', 'oracao'],
+        tags: ['como-orar', 'jesus', 'oracao'],
         content: [
             {
                 id: crypto.randomUUID(),
@@ -333,7 +333,7 @@ export const studies: TStudy[] = [
         slug: 'salvacao',
         image: CruzJesusPng,
         title: 'Jesus e a salvação',
-        tags: ['salvação', 'jesus', 'pecado', 'perdão', 'salvacao', 'entrega'],
+        tags: ['salvacao', 'jesus', 'pecado', 'perdao', 'entrega'],
         content: [
             {
                 id: crypto.randomUUID(),

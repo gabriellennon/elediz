@@ -39,9 +39,9 @@ export default function Guide() {
             </div>
         </div>
         <div className="grid grid-cols-2 gap-3 md:flex md:flex-row md:flex-wrap md:w-full px-8">
-            {studies.map(study => (
+            {/* {studies.map(study => (
               <StudyCard key={study} />
-            ))}
+            ))} */}
         </div>
     </section>
   )
