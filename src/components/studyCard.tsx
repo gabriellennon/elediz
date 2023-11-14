@@ -1,7 +1,7 @@
-import Image from "next/image"
 import { Card, CardContent, CardFooter } from "./ui/card"
 import { Toggle } from "./ui/toggle"
 import { useRouter } from 'next/navigation'
+import Image from "next/image"
  
 type TProps = {
   slugStudy: string;
@@ -28,6 +28,8 @@ export const StudyCard = ({ imageStudy, slugStudy, tagsStudy, titleStudy }: TPro
         <Image
           src={imageStudy}
           alt="Imagem"
+          height={112}
+          width={243}
           className="w-full h-28 object-cover rounded-tl-[14px] rounded-tr-[14px]"
         />
       </CardContent>

@@ -36,6 +36,24 @@ export default function Home() {
     }
   }
 
+  const filterActive = () => {
+    switch (defaultTab) {
+      case 'all':
+        return filteredNameStudy;
+      case 'az':
+        return filterOrderStudies('asc');
+    
+      case 'za':
+        return filterOrderStudies('dec');
+      default:
+        return filteredNameStudy;
+    }
+  }
+
+  function handleClickTab(tab: string){
+    setDefaultTab(tab)
+  }
+
 
   return (
     <main className="min-h-screen bg-[#F5F8FA] pb-5 pt-12">
@@ -49,7 +67,7 @@ export default function Home() {
             width={120}
             height={125}
             alt="Imagem de uma cruz e um céu azul"
-            className="rounded-full md:max-w-[200px] md:max-h-[205px]"
+            className="rounded-full md:max-w-[200px] md:max-h-[205px] w-auto h-auto"
           />
         </div>
       </div>
@@ -70,45 +88,17 @@ export default function Home() {
           <div className="mt-2">
             <Tabs defaultValue={defaultTab} >
               <TabsList>
-                <TabsTrigger value="all">Todos</TabsTrigger>
+                <TabsTrigger value="all" onClick={() => handleClickTab('all')}>Todos</TabsTrigger>
                 {/* @TO-DO: Implementar Depois quando tiver o analytics */}
                 {/* <TabsTrigger value="moreViews">Mais acessados</TabsTrigger> */}
-                <TabsTrigger value="az">A - Z</TabsTrigger>
-                <TabsTrigger value="za">Z - A</TabsTrigger>
+                <TabsTrigger value="az" onClick={() => handleClickTab('az')}>A - Z</TabsTrigger>
+                <TabsTrigger value="za" onClick={() => handleClickTab('za')}>Z - A</TabsTrigger>
               </TabsList>
-              <TabsContent value="all">
+              <TabsContent value={defaultTab}>
                 <div className="grid grid-cols-2 gap-3 md:flex md:flex-row md:flex-wrap md:w-full mt-2">
-                  {filteredNameStudy.map(study => (
+                  {filterActive().map(study => (
                     <StudyCard 
-                      key={study.id} 
-                      imageStudy={study.image}
-                      slugStudy={study.slug}
-                      tagsStudy={study.tags}
-                      titleStudy={study.title}
-                    />
-                  ))}
-                </div>
-              </TabsContent>
-              {/* @TO-DO: Implementar Depois quando tiver o analytics */}
-              {/* <TabsContent value="moreViews">Change your password here.</TabsContent> */}
-              <TabsContent value="az">
-                <div className="grid grid-cols-2 gap-3 md:flex md:flex-row md:flex-wrap md:w-full mt-2">
-                  {filterOrderStudies('asc').map(study => (
-                    <StudyCard 
-                      key={study.id} 
-                      imageStudy={study.image}
-                      slugStudy={study.slug}
-                      tagsStudy={study.tags}
-                      titleStudy={study.title}
-                    />
-                  ))}
-                </div>
-              </TabsContent>
-              <TabsContent value="za">
-                <div className="grid grid-cols-2 gap-3 md:flex md:flex-row md:flex-wrap md:w-full mt-2">
-                  {filterOrderStudies('dec').map(study => (
-                    <StudyCard 
-                      key={study.id} 
+                      key={`all-${study.id}`} 
                       imageStudy={study.image}
                       slugStudy={study.slug}
                       tagsStudy={study.tags}
