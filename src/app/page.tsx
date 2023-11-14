@@ -8,11 +8,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { StudyCardSecondary } from "@/components/StudyCardSecondary";
 import { studies } from "@/utils/studies";
 import { TStudy } from "@/utils/types";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [studiesCatalog, setStudies] = useState<TStudy[]>(studies);
   const [defaultTab, setDefaultTab] = useState('all');
   const [search, setSearch] = useState('');
+  const router = useRouter()
 
   const filteredNameStudy = search.length > 0 
         ? studiesCatalog.filter(a => a.title.toUpperCase().includes(search.toUpperCase()))
@@ -54,6 +57,10 @@ export default function Home() {
     setDefaultTab(tab)
   }
 
+  function handleGoToShowAllStudies(){
+    router.push(`/estudos`)
+  }
+
 
   return (
     <main className="min-h-screen bg-[#F5F8FA] pb-5 pt-12">
@@ -77,7 +84,7 @@ export default function Home() {
         </h2>
         <Input 
           className="border-[#DCE2E5] rounded-full mt-3 h-11"
-          placeholder="Busque por um assunto de interesse"
+          placeholder="Busque por um assunto ou estudo específico"
           onChange={(e) => setSearch(e.target.value)}
         />
 
@@ -96,18 +103,30 @@ export default function Home() {
               </TabsList>
               <TabsContent value={defaultTab}>
                 <div className="grid grid-cols-2 gap-3 md:flex md:flex-row md:flex-wrap md:w-full mt-2">
-                  {filterActive().map(study => (
-                    <StudyCard 
-                      key={`all-${study.id}`} 
-                      imageStudy={study.image}
-                      slugStudy={study.slug}
-                      tagsStudy={study.tags}
-                      titleStudy={study.title}
-                    />
-                  ))}
+                  {filterActive().map((study, index) => {
+                    if(index <= 9){
+                      return (
+                        <StudyCard 
+                          key={`all-${study.id}`} 
+                          imageStudy={study.image}
+                          slugStudy={study.slug}
+                          tagsStudy={study.tags}
+                          titleStudy={study.title}
+                        />
+                      )
+                    }
+                  })}
                 </div>
               </TabsContent>
             </Tabs>
+          </div>
+          <div className="mt-2">
+            <Button
+              className="w-full md:w-48 bg-slate-700"
+              onClick={handleGoToShowAllStudies}
+            >
+              Ver todos estudos
+            </Button>
           </div>
         </div>
 
