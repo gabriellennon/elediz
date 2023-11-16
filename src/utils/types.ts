@@ -16,4 +16,12 @@ export type TStudy = {
     content: TContentStudy[];
     writer: string;
     slug: string;
+    grupoId?: string;
+    grupoName?: string;
+}
+
+export type TGroup = {
+    grupoId: string;
+    grupoName: string;
+    imageGroup: any;
 }

@@ -4,7 +4,8 @@ import HugJesusPng from '../assets/img/estudos/hugJesus.png'
 import JesusHeartPng from '../assets/img/estudos/jesusHeart.png'
 import PrayerPng from '../assets/img/estudos/prayer.png'
 import CruzJesusPng from '../assets/img/estudos/cruzjesus.png'
-import { TStudy } from './types'
+import JesusQuadriculadoImg from '../assets/img/estudos/jesus.jpeg'
+import { TGroup, TStudy } from './types'
 
 export const studies: TStudy[] = [
     {
@@ -96,7 +97,9 @@ export const studies: TStudy[] = [
                 text: 'Como estudar, meditar e compreender a Bíblia? • Ore a Deus pedindo sabedoria antes de ler e estudar as Escrituras. • Compare textos e analise o livro, o capítulo e os versos antes e depois. Medite, pensando: O que Deus está dizendo para mim? O que Ele espera de mim? Levando em conta meu conhecimento acerca de Deus, que decisão devo tomar?'
             },
         ],
-        writer: 'Divisão Sul americana IASD'
+        writer: 'Divisão Sul americana IASD',
+        grupoId: '178asdasda717ew9',
+        grupoName: 'Guia completo inicial da bíblia'
     },
     {
         id: 1,
@@ -182,7 +185,9 @@ export const studies: TStudy[] = [
                 text: 'Textos adicionais: Gênesis 1:1 a 5 | Gênesis 1:26 a 31 | Salmo 8:1 a 9 | João 1:1 a 3 | Colossenses 1:15 a 17 | Filipenses 4:8 | 2 Timóteo 3:1 a 4 .'
             },
         ],
-        writer: 'Divisão Sul americana IASD'
+        writer: 'Divisão Sul americana IASD',
+        grupoId: '178asdasda717ew9',
+        grupoName: 'Guia completo inicial da bíblia'
     },
     {
         id: 2,
@@ -256,7 +261,9 @@ export const studies: TStudy[] = [
                 text: 'Textos adicionais: Gênesis 3 | Apocalipse 12:7 a 12 | 1 João 3:1 a 6 | 1 João 3:7 a 10 | 1 João 3:11 a 24 | Efésios 6:10 a 20 | Tiago 4:1 a 10 | Romanos 8:37 .'
             },
         ],
-        writer: 'Divisão Sul americana IASD'
+        writer: 'Divisão Sul americana IASD',
+        grupoId: '178asdasda717ew9',
+        grupoName: 'Guia completo inicial da bíblia'
     },
     {
         id: 3,
@@ -326,7 +333,9 @@ export const studies: TStudy[] = [
                 text: 'Jesus orou por você: “Não peço somente por estes, mas também por aqueles que vierem a crer em Mim, por meio da palavra que eles falarem, a fim de que todos sejam um. E como Tu, ó Pai, estás em Mim e Eu em Ti, também eles estejam em Nós, para que o mundo creia que Tu Me enviaste” (João 17:20 e 21).'
             },
         ],
-        writer: 'Divisão Sul americana IASD'
+        writer: 'Divisão Sul americana IASD',
+        grupoId: '178asdasda717ew9',
+        grupoName: 'Guia completo inicial da bíblia'
     },
     {
         id: 4,
@@ -421,8 +430,18 @@ export const studies: TStudy[] = [
                 text: 'Textos adicionais: Romanos 5:1 a 11 | Efésios 2:1 a 10 | Gálatas 4:1 a 7 | Romanos 3:21 a 26 | 1 Coríntios 15:1 a 8 | Colossenses 3:1 a 11 | 1 João 5:1 a 12.'
             },
         ],
-        writer: 'Divisão Sul americana IASD'
-    }
+        writer: 'Divisão Sul americana IASD',
+        grupoId: '178asdasda717ew9',
+        grupoName: 'Guia completo inicial da bíblia'
+    },
+]
+
+export const groupsStudies: TGroup[] = [
+    {
+        grupoId: '178asdasda717ew9',
+        grupoName: 'Guia completo inicial da bíblia',
+        imageGroup: JesusQuadriculadoImg
+    },
 ]
 
 

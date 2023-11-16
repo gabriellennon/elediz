@@ -112,6 +112,14 @@ export default function RedirectLink() {
                     </>
                 )}
             </div>
+            <div className="p-8 flex flex-col gap-3">
+                <p className="font-medium text-sm text-[#3d3d45]">
+                    Lembre-se: Todo o estudo aqui escrito foi através das instruções da bíblia, não trazemos nada além do que a bíblia nos fornece.
+                </p>
+                <p className="font-medium text-xs text-[#3d3d45]">
+                    Escritor do estudo: {study?.writer}
+                </p>
+            </div>
         </div>
     </section>
   )

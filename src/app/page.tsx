@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { StudyCard } from "@/components/studyCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { StudyCardSecondary } from "@/components/StudyCardSecondary";
-import { studies } from "@/utils/studies";
+import { groupsStudies, studies } from "@/utils/studies";
 import { TStudy } from "@/utils/types";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
@@ -14,6 +14,7 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const [studiesCatalog, setStudies] = useState<TStudy[]>(studies);
   const [defaultTab, setDefaultTab] = useState('all');
+  const [activeTabGroup, setActiveTabGroup] = useState('allGuides');
   const [search, setSearch] = useState('');
   const router = useRouter()
 
@@ -57,8 +58,43 @@ export default function Home() {
     setDefaultTab(tab)
   }
 
+  function handleClickTabGroupOrder(tab: string){
+    setActiveTabGroup(tab)
+  }
+
   function handleGoToShowAllStudies(){
     router.push(`/estudos`)
+  }
+
+  function filterOrderGroupStudies(type: 'asc' | 'dec'){
+    if(type === 'asc'){
+      const studiesAsc = groupsStudies.sort(function(a, b){
+        if(a.grupoName < b.grupoName) { return -1; }
+        if(a.grupoName > b.grupoName) { return 1; }
+        return 0;
+      })
+      return studiesAsc
+    } else {
+      const studiesDec = groupsStudies.sort(function(a, b){
+        if(b.grupoName < a.grupoName) { return -1; }
+        if(b.grupoName > a.grupoName) { return 1; }
+        return 0;
+      })
+      return studiesDec
+    }
+  }
+
+  const filterTabGuidesActive = () => {
+    switch (activeTabGroup) {
+      case 'allGuides':
+        return groupsStudies;
+      case 'azGuides':
+        return filterOrderGroupStudies('asc');
+      case 'zaGuides':
+        return filterOrderGroupStudies('dec');
+      default:
+        return groupsStudies;
+    }
   }
 
 
@@ -132,24 +168,30 @@ export default function Home() {
 
         <div className="mt-6">
           <h2 className="text-[#3D3D45] text-xl md:text-2xl font-bold">
-            Séries de estudos
+            Guias de estudos
           </h2>
           <div className="mt-2">
-            <Tabs defaultValue="all" className="w-[400px]">
+            <Tabs defaultValue={activeTabGroup}>
               <TabsList>
-                <TabsTrigger value="all">Todos</TabsTrigger>
-                <TabsTrigger value="moreViews">Mais acessados</TabsTrigger>
-                <TabsTrigger value="az">A - Z</TabsTrigger>
-                <TabsTrigger value="za">Z - A</TabsTrigger>
+                <TabsTrigger value="allGuides" onClick={() => handleClickTabGroupOrder('allGuides')}>
+                  Todos
+                </TabsTrigger>
+                {/* <TabsTrigger value="azGuides" onClick={() => handleClickTabGroupOrder('azGuides')}>A - Z</TabsTrigger> */}
+                {/* <TabsTrigger value="zaGuides" onClick={() => handleClickTabGroupOrder('zaGuides')}>Z - A</TabsTrigger> */}
               </TabsList>
-              <TabsContent value="all">Make changes to your account here.</TabsContent>
-              <TabsContent value="moreViews">Change your password here.</TabsContent>
+              <TabsContent value={activeTabGroup}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-2 mt-2 w-full">
+                  {filterTabGuidesActive().map(study => (
+                    <StudyCardSecondary 
+                      key={`groups-${study.grupoId}`} 
+                      id={study.grupoId}
+                      image={study.imageGroup}
+                      title={study.grupoName}
+                    />
+                  ))}
+                </div>
+              </TabsContent>
             </Tabs>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-2 mt-2">
-            {studies.map(study => (
-              <StudyCardSecondary key={study.id} />
-            ))}
           </div>
         </div>
       </section>
