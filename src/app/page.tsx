@@ -10,6 +10,7 @@ import { groupsStudies, studies } from "@/utils/studies";
 import { TStudy } from "@/utils/types";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import Script from "next/script";
 
 export default function Home() {
   const [studiesCatalog, setStudies] = useState<TStudy[]>(studies);
@@ -195,6 +196,21 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Script 
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+      />
+      <Script 
+        id="google-analytics"
+        strategy="afterInteractive"
+      >
+        {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
+        `}
+      </Script>
     </main>
   )
 }
