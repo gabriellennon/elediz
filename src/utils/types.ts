@@ -8,11 +8,16 @@ export type TContentStudy = {
     explanation?: string;
 }
 
+export type TTags = {
+    tagName: string;
+    tagId: string;
+}
+
 export type TStudy = {
     id: number;
     title: string;
     image: any;
-    tags: string[];
+    tags: TTags[];
     content: TContentStudy[];
     writer: string;
     slug: string;

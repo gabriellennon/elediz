@@ -2,12 +2,13 @@ import { Card, CardContent, CardFooter } from "./ui/card"
 import { Toggle } from "./ui/toggle"
 import { useRouter } from 'next/navigation'
 import Image from "next/image"
+import { TTags } from "@/utils/types"
  
 type TProps = {
   slugStudy: string;
   imageStudy: string;
   titleStudy: string;
-  tagsStudy: string[];
+  tagsStudy: TTags[];
 }
 
 export const StudyCard = ({ imageStudy, slugStudy, tagsStudy, titleStudy }: TProps) => {
@@ -35,7 +36,7 @@ export const StudyCard = ({ imageStudy, slugStudy, tagsStudy, titleStudy }: TPro
       </CardContent>
       <CardFooter className="p-[8px]">
         <div className="flex flex-col gap-2 flex-1 justify-between min-h-[92px]">
-          <p className="font-medium text-[#50555A]">
+          <p className="font-medium text-[#D7AC49] uppercase text-base">
             {titleStudy}
           </p>
           <div className="flex flex-row gap-[4px]">
@@ -43,12 +44,12 @@ export const StudyCard = ({ imageStudy, slugStudy, tagsStudy, titleStudy }: TPro
               if(index <= 1){
                 return (
                   <Toggle 
-                    key={`tag-${tag}-${index}`}
+                    key={`tag-${tag.tagId}`}
                     variant="outline" 
                     className="bg-[#D9D9D9] text-[#50555A]"
                   >
                     <span className="font-medium text-xs">
-                      {tag}
+                      {tag.tagName}
                     </span>
                   </Toggle>
                 )

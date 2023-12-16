@@ -5,7 +5,7 @@ import JesusHeartPng from '../assets/img/estudos/jesusHeart.png'
 import PrayerPng from '../assets/img/estudos/prayer.png'
 import CruzJesusPng from '../assets/img/estudos/cruzjesus.png'
 import JesusQuadriculadoImg from '../assets/img/estudos/jesus.jpeg'
-import { TGroup, TStudy } from './types'
+import { TGroup, TStudy, TTags } from './types'
 
 export const studies: TStudy[] = [
     {
@@ -13,7 +13,24 @@ export const studies: TStudy[] = [
         slug: 'as-escrituras',
         image: BiblePng,
         title: 'Jesus e as escrituras Sagradas',
-        tags: ['biblia','verdade', 'profetas', 'interpretacao'],
+        tags: [
+            {
+                tagId: 'C3tqme',
+                tagName: 'bíblia'
+            },
+            {
+                tagId: 'et9l7g',
+                tagName: 'verdade'
+            },
+            {
+                tagId: 'zRg4nf',
+                tagName: 'profetas'
+            },
+            {
+                tagId: 'J1fTZ2',
+                tagName: 'interpretação'
+            },
+        ],
         content: [
             {
                 id: crypto.randomUUID(),
@@ -106,7 +123,20 @@ export const studies: TStudy[] = [
         slug: 'amor-divino',
         image: HugJesusPng,
         title: 'Amor divino',
-        tags: ['amor', 'compaixao', 'divindade'],
+        tags: [
+            {
+                tagId: 'Qlyy8H',
+                tagName: 'amor'
+            },
+            {
+                tagId: 'IVQ99y',
+                tagName: 'compaixão'
+            },
+            {
+                tagId: 'hy5sTO',
+                tagName: 'divindade'
+            },
+        ],
         content: [
             {
                 id: crypto.randomUUID(),
@@ -194,7 +224,28 @@ export const studies: TStudy[] = [
         slug: 'restauracao-do-bem',
         image: JesusHeartPng,
         title: 'Jesus e a restauração do bem',
-        tags: ['origem', 'pecado', 'livre-arbitrio', 'como-vencer-o-pecado', 'oracao'],
+        tags: [
+            {
+                tagId: '0HgdI0',
+                tagName: 'origem'
+            },
+            {
+                tagId: 'dofCyt',
+                tagName: 'pecado'
+            },
+            {
+                tagId: 'Alw4xq',
+                tagName: ' livre arbítrio'
+            },
+            {
+                tagId: 'JavJtd',
+                tagName: 'como vencer o pecado'
+            },
+            {
+                tagId: 'GaGJte',
+                tagName: 'oração'
+            },
+        ],
         content: [
             {
                 id: crypto.randomUUID(),
@@ -270,7 +321,20 @@ export const studies: TStudy[] = [
         slug: 'oracao',
         image: PrayerPng,
         title: 'Oração',
-        tags: ['como-orar', 'jesus', 'oracao'],
+        tags: [
+            {
+                tagId: '9jAmJi',
+                tagName: 'como orar'
+            },
+            {
+                tagId: 'ORIjsk',
+                tagName: 'jesus'
+            },
+            {
+                tagId: 'GaGJte',
+                tagName: 'oração'
+            },
+        ],
         content: [
             {
                 id: crypto.randomUUID(),
@@ -342,7 +406,28 @@ export const studies: TStudy[] = [
         slug: 'salvacao',
         image: CruzJesusPng,
         title: 'Jesus e a salvação',
-        tags: ['salvacao', 'jesus', 'pecado', 'perdao', 'entrega'],
+        tags: [
+            {
+                tagId: '6h90jV',
+                tagName: 'salvação'
+            },
+            {
+                tagId: 'ORIjsk',
+                tagName: 'jesus'
+            },
+            {
+                tagId: 'dofCyt',
+                tagName: 'pecado'
+            },
+            {
+                tagId: '6GCSX5',
+                tagName: 'perdão'
+            },
+            {
+                tagId: 'SzRNnE',
+                tagName: 'entrega'
+            },
+        ],
         content: [
             {
                 id: crypto.randomUUID(),
@@ -442,6 +527,26 @@ export const groupsStudies: TGroup[] = [
         grupoName: 'Guia completo inicial da bíblia',
         imageGroup: JesusQuadriculadoImg
     },
+]
+
+export const tagsStudies: TTags[] = [
+    { tagId: 'C3tqme', tagName: 'biblia' },
+    { tagId: 'et9l7g', tagName: 'verdade' },
+    { tagId: 'zRg4nf', tagName: 'profetas' },
+    { tagId: 'J1fTZ2', tagName: 'interpretacao' },
+    { tagId: 'Qlyy8H', tagName: 'amor' },
+    { tagId: 'IVQ99y', tagName: 'compaixão' },
+    { tagId: 'hy5sTO', tagName: 'divindade' },
+    { tagId: '0HgdI0', tagName: 'origem' },
+    { tagId: 'dofCyt', tagName: 'pecado' },
+    { tagId: 'Alw4xq', tagName: 'livre-arbitrio' },
+    { tagId: 'JavJtd', tagName: 'como vencer o pecado' },
+    { tagId: 'GaGJte', tagName: 'oração' },
+    { tagId: '9jAmJi', tagName: 'como orar' },
+    { tagId: 'ORIjsk', tagName: 'jesus' },
+    { tagId: '6h90jV', tagName: 'salvação' },
+    { tagId: '6GCSX5', tagName: 'perdão' },
+    { tagId: 'SzRNnE', tagName: 'Entrega' }
 ]
 
 

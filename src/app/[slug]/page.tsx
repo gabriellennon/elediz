@@ -48,7 +48,7 @@ export default function RedirectLink() {
             <div className="mt-8">
                 {!!study ? (
                     <>
-                        <h1 className="text-[#3D3D45] text-2xl font-medium">
+                        <h1 className="text-[#3D3D45] text-2xl font-medium uppercase">
                             {study?.title}
                         </h1>
                         <div className="flex flex-row gap-[4px] mt-2">
@@ -57,10 +57,10 @@ export default function RedirectLink() {
                                     key={`${tag}-${index}`}
                                     variant="outline" 
                                     className="bg-[#D9D9D9] text-[#50555A] p-1"
-                                    onClick={() => handelGoToTagsPage(tag)}
+                                    onClick={() => handelGoToTagsPage(tag.tagId)}
                                 >
                                     <span className="font-medium text-xs">
-                                        {tag}
+                                        {tag.tagName}
                                     </span>
                                 </Toggle>
                             ))}

@@ -7,7 +7,7 @@ import JesusQuadriculadoImg from '../../../assets/img/estudos/jesus.jpeg'
 import { usePathname, useRouter } from 'next/navigation'
 import { StudyCard } from '@/components/studyCard'
 import { useEffect, useState } from 'react'
-import { studies } from '@/utils/studies'
+import { studies, tagsStudies } from '@/utils/studies'
 import { TStudy } from '@/utils/types'
  
 export default function TagsScreen() {
@@ -20,13 +20,16 @@ export default function TagsScreen() {
     router.back()
   }
 
+  const identifyTag = (tagId: string) => {
+    const filterTag = tagsStudies.filter( tag => tag.tagId === tagActive)
+    return filterTag[0].tagName
+  }
+
   useEffect(() => {
     const tagActive = pathname.split('/tags/')
     setTagActive(tagActive[1])
-    const studiesWithThisTag = studies.filter(e => e.tags.includes(tagActive[1]))
+    const studiesWithThisTag = studies.filter(e => e.tags.some(tag => tag.tagId === tagActive[1] || tag.tagName === tagActive[1]))
 
-    console.log(tagActive[1])
-    console.log(studiesWithThisTag)
     setStudies(studiesWithThisTag)
   },[pathname])
 
@@ -48,7 +51,7 @@ export default function TagsScreen() {
                     <>
                         <div className="mt-8 mb-4">
                             <h1 className="text-[#3D3D45] text-2xl font-medium">
-                                Estudos relacionados com a tag: <span className='text-sky-950'>{tagActive}</span>
+                                Estudos relacionados com a tag: <span className='text-sky-950'>{identifyTag(tagActive)}</span>
                             </h1>
                         </div>
                         <div className="grid grid-cols-2 gap-3 md:flex md:flex-row md:flex-wrap md:w-full mt-2">
